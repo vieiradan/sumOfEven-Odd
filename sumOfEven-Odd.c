@@ -1,17 +1,21 @@
 #include <stdio.h>
 
 int main() {
-  int start, end, i, even= 0, odd = 0;
+  int temp, start, end, i, even= 0, odd = 0;
   
   printf("Enter two numbers:\n");
-  printf("\nStart number: ");
+  printf("\nFirst number: ");
   scanf("%i", &start);
-  printf("End number: ");
+  printf("Second number: ");
   scanf("%i", &end);
-
-  printf("\nValues: ");
+    
+    if (start>end) {
+      temp = start;
+      start = end;
+      end = temp;
+    }
   
-  // printing entered values
+  // displaying values
   for (i=start; i<=end; i++) {
     printf("\n%i", i);
     if (i % 2==0) {
@@ -21,7 +25,6 @@ int main() {
       odd += i;
     }
   }
-  
   printf("\n\nSum of Even values between %i and %i is: %i", start, end, even);
   printf("\n\nSum of Odd values between %i and %i is: %i", start, end, odd);
 }
